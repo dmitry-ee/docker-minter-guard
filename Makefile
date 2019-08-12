@@ -8,7 +8,7 @@ DOCKER_ID_USER  = dmi7ry
 all: build
 
 build:
-	docker build --squash -t $(DOCKER_ID_USER)/$(APP_NAME):$(APP_VERSION) .
+	docker build -t $(DOCKER_ID_USER)/$(APP_NAME):$(APP_VERSION) .
 
 run:
 	docker run -it $(DOCKER_ID_USER)/$(APP_NAME):$(APP_VERSION)
