@@ -1,0 +1,2 @@
+git+https://github.com/U-node/minter-guard
+git+https://github.com/U-node/minter-sdk

@@ -1,0 +1,7 @@
+[API]
+API_URL=http://127.0.0.1:8841/
+
+[NODE]
+PUB_KEY=Mpxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+SET_OFF_TX=XXXXX
+MISSED_BLOCKS=2
