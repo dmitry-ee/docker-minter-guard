@@ -26,8 +26,8 @@ run-env:
 		$(DOCKER_ID_USER)/$(APP_NAME):$(APP_VERSION)
 
 configure:
-	source .env && \
-	export $(cut -d= -f1 .env) && \
+	source .env
+	export $(cut -d= -f1 .env)
 	docker run --rm -it --name=minter-guard \
 		-v PUB_KEY=$(PUB_KEY) \
 		$(DOCKER_ID_USER)/$(APP_NAME):$(APP_VERSION) txgenerator
