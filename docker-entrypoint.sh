@@ -28,7 +28,7 @@ init_config() {
 if [ "$1" = 'start' ]; then
   init_config
   echo "minter guard is starting..."
-  python3 /usr/local/lib/python3.6/site-packages/minterguard/guard.py --config=$(pwd)/config
+  exec python3 /usr/local/lib/python3.6/site-packages/minterguard/guard.py --config=$(pwd)/config
   echo "minter guard started!"
 fi
 
@@ -36,7 +36,7 @@ if [ "$1" = 'txgenerator' ]; then
   init_config
   echo "txgenerator is starting..."
 
-  python3 /usr/local/lib/python3.6/site-packages/minterguard/txgenerator.py $(pwd)/config off
+  exec python3 /usr/local/lib/python3.6/site-packages/minterguard/txgenerator.py $(pwd)/config off
 fi
 
 exec "$@"
