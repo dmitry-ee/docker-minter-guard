@@ -24,6 +24,8 @@ ENV     API_URL=http://127.0.0.1:8841/
 ENV     PUB_KEY=Mpxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ENV     SET_OFF_TX=XXXXXX
 ENV     MISSED_BLOCKS=2
+ENV     LOG_LEVEL=INFO
+ENV     SLEEP_TIME_MS=1000
 
 COPY    docker-entrypoint.sh ${APP_DIR}
 COPY    config ${APP_DIR}

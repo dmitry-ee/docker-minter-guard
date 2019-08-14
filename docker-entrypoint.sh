@@ -20,6 +20,7 @@ init_config() {
   set_config PUB_KEY $PUB_KEY
   set_config SET_OFF_TX $SET_OFF_TX
   set_config MISSED_BLOCKS $MISSED_BLOCKS
+  set_config SLEEP_TIME_MS $SLEEP_TIME_MS
 
   cat "$config_tmp" > $(pwd)/config
   rm "$config_tmp"
@@ -27,15 +28,13 @@ init_config() {
 
 if [ "$1" = 'start' ]; then
   init_config
-  echo "minter guard is starting..."
-  exec python3 /usr/local/lib/python3.6/site-packages/minterguard/guard.py --config=$(pwd)/config
   echo "minter guard started!"
+  exec python3 /usr/local/lib/python3.6/site-packages/minterguard/guard.py --config=$(pwd)/config
 fi
 
 if [ "$1" = 'txgenerator' ]; then
   init_config
   echo "txgenerator is starting..."
-
   exec python3 /usr/local/lib/python3.6/site-packages/minterguard/txgenerator.py $(pwd)/config off
 fi
 

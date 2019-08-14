@@ -10,6 +10,9 @@ all: build
 build:
 	docker build --squash -t $(DOCKER_ID_USER)/$(APP_NAME):$(APP_VERSION) .
 
+build-nc:
+	docker build --squash --no-cache -t $(DOCKER_ID_USER)/$(APP_NAME):$(APP_VERSION) .
+
 run:
 	docker run -it $(DOCKER_ID_USER)/$(APP_NAME):$(APP_VERSION)
 
